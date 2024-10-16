@@ -1,15 +1,8 @@
-import sys
-input = sys.stdin.readline
-
-from collections import defaultdict
+from collections import Counter
 
 N = int(input())
-book_info = defaultdict(int)
-
-for _ in range(N):
-    book_name = input().rstrip()
-    
-    book_info[book_name] += 1
+book_info = [input().rstrip() for _ in range(N)]
+book_info = Counter(book_info)
 
 max_book_sales = max(book_info.values())
 
